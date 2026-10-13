@@ -1,0 +1,15 @@
+{
+  "query": "How do I optimize CPU performance for low-level systems programming?",
+  "candidates": [
+    "Compiling with release optimizations and SIMD instructions can drastically improve execution speed.",
+    "Rust provides zero-cost abstractions and memory safety without a garbage collector.",
+    "Efficient cache locality and avoiding false sharing between CPU threads maximizes throughput.",
+    "A recipe for baking sourdough bread at home with simple ingredients.",
+    "Python is an interpreted, dynamically typed language known for its readability.",
+    "Profiling CPU bottlenecks using perf and flamegraphs helps identify slow hot paths.",
+    "The history of Renaissance architecture across European cities.",
+    "Inline assembly and compiler intrinsics allow fine-grained hardware control.",
+    "Understanding the borrow checker in Rust eliminates data races at compile time.",
+    "Best practices for training deep neural networks on distributed GPUs."
+  ]
+}
