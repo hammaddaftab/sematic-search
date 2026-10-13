@@ -26,27 +26,25 @@ cargo install cargo-watch
 
 The `models/` directory is excluded from Git to prevent repository bloat. Model weights are distributed via GitHub Releases.
 
-### Package local model for a GitHub Release:
+### Option A: Download automatically via script (Recommended on fresh clone)
 ```bash
-# Compress model directory into an archive (~80 MB)
+./scripts/fetch_models.sh
+```
+*Auto-detects the repository remote (`hammaddaftab/sematic-search`), downloads `all-MiniLM-L6-v2.tar.gz` from the `model-v1` release, and extracts it into `models/all-MiniLM-L6-v2/`.*
+
+---
+
+### Packaging the Model for a GitHub Release:
+When publishing or updating the model on GitHub:
+
+```bash
+# 1. Compress the local models directory (~80 MB)
 tar -czvf all-MiniLM-L6-v2.tar.gz -C models/all-MiniLM-L6-v2 .
 
-# Generate SHA256 checksum for tracking
-sha256sum all-MiniLM-L6-v2.tar.gz
-```
-
-### Download model on a fresh clone:
-```bash
-# Create target directory
-mkdir -p models/all-MiniLM-L6-v2
-
-# Download release archive
-curl -fsSL -o /tmp/model.tar.gz \
-  "https://github.com/<USER>/<REPO>/releases/download/model-v1/all-MiniLM-L6-v2.tar.gz"
-
-# Extract directly into models directory and clean up
-tar -xzf /tmp/model.tar.gz -C models/all-MiniLM-L6-v2
-rm -f /tmp/model.tar.gz
+# 2. Upload to GitHub Releases
+# Web: https://github.com/hammaddaftab/sematic-search/releases/new
+# Create tag: model-v1
+# Attach file: all-MiniLM-L6-v2.tar.gz
 ```
 
 ---
